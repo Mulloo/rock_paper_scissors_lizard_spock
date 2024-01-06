@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <title>Rock Paper Scissor Lizard Spock</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissor Lizard Spock</h1>
+    <div class="btnDiv">
+        <button data-type="submit">Start</button>
+        <button data-type="easy">Easy</button>
+        <button data-type="medium">Medium</button>
+        <button data-type="hard">Hard</button>
+    </div>
+    <div class="playerChoiceDiv">
+        <button onclick="playGame('rock')">Rock</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('Scissors')">Scissors</button>
+        <button onclick="playGame('lizard')">Lizard</button>
+        <button onclick="playGame('spock')">Spock</button>
+    </div>
+    <div id="playerChoice">Player: </div>
+    <div id="cpuChoice">CPU: </div>
+    <div id="result"></div>
+
+    <div class="rules">
+        <ol>
+            <li>
+                Scissors cut Paper
+            </li>
+            <li>
+                Paper covers Rock
+            </li>
+            <li>
+                Rock crushes Lizard
+            </li>
+            <li>
+                Lizard poisons Spock
+            </li>
+            <li>
+                Spock smashes Scissors
+            </li>
+            <li>
+                Scissors decapitate Lizard
+            </li>
+            <li>
+                Lizard eats Paper
+            </li>
+            <li>
+                Paper disproves Spock
+            </li>
+            <li>
+                Spock vaporizes Rock
+            </li>
+            <li>
+                Rock crushes Scissors
+            </li>
+        </ol>
+    </div>
+
+
+</body>
+
+</html>
