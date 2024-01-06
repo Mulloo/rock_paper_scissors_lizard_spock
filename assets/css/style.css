@@ -18,8 +18,16 @@ h1 {
     flex-direction: column;
 }
 
+.btnDiv button {
+    margin-bottom: 10px;
+}
+
 .playerChoiceDiv {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+.playerChoiceDiv button {
+    margin-right: 5px;
 }
