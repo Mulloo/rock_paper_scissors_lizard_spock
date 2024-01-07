@@ -14,27 +14,39 @@
     </header>
 
     <div class="btnDiv">
-        <button class="easy">Easy</button>
-        <button class="medium">Medium</button>
-        <button class="hard">Hard</button>
-        <button class="submit">Start</button>
+        <button gameType="easy">Easy</button>
+        <button gameType="medium">Medium</button>
+        <button gameType="hard">Hard</button>
+        <!-- <button gameType="submit">Start</button>  -->
     </div>
+
     <div class="playerChoiceDiv">
-        <button onclick="playerChoice('rock')">✊ Rock</button>
-        <button onclick="playerChoice('paper')">✋ Paper</button>
-        <button onclick="playerChoice('scissors')">✌️ Scissors</button>
-        <button onclick="playerChoice('lizard')">🦎 Lizard</button>
-        <button onclick="playerChoice('spock')">🖖 Spock</button>
+        <button dataType="rock">✊ Rock</button>
+        <button dataType="paper">✋ Paper</button>
+        <button dataType="scissors">✌️ Scissors</button>
+        <button dataType="lizard">🦎 Lizard</button>
+        <button dataType="spock">🖖 Spock</button>
     </div>
-    <div id="playerChoose">Player: </div>
+
+    <div id="playerChoice">Player: </div>
     <div id="cpuChoice">CPU: </div>
     <div id="result"></div>
     <div id="rounds">Rounds: </div>
 
 
     <div id="scoreboard">
-        <p>player Score<span id='player-score'>0</span></p>
-        <p>CPU Score:<span id='cpu-score'>0</span></p>
+        <p>
+            player Score
+            <span id='player-score'>
+                0
+            </span>
+        </p>
+        <p>
+            CPU Score:
+            <span id='cpu-score'>
+                0
+            </span>
+        </p>
     </div>
 
 
