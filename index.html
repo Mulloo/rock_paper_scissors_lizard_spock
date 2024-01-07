@@ -10,31 +10,37 @@
 
 <body>
     <header>
-        <h1>Rock Paper Scissor Lizard Spock</h1>
+        <h1>Rock-Paper-Scissor-Lizard-Spock</h1>
     </header>
 
     <div class="btnDiv">
-        <button data-type="submit">Start</button>
-        <button data-type="easy">Easy</button>
-        <button data-type="medium">Medium</button>
-        <button data-type="hard">Hard</button>
+        <button class="easy">Easy</button>
+        <button class="medium">Medium</button>
+        <button class="hard">Hard</button>
+        <button class="submit">Start</button>
     </div>
     <div class="playerChoiceDiv">
-        <button onclick="playGame('rock')">Rock</button>
-        <button onclick="playGame('paper')">Paper</button>
-        <button onclick="playGame('scissors')">Scissors</button>
-        <button onclick="playGame('lizard')">Lizard</button>
-        <button onclick="playGame('spock')">Spock</button>
+        <button onclick="playerChoice('rock')">✊ Rock</button>
+        <button onclick="playerChoice('paper')">✋ Paper</button>
+        <button onclick="playerChoice('scissors')">✌️ Scissors</button>
+        <button onclick="playerChoice('lizard')">🦎 Lizard</button>
+        <button onclick="playerChoice('spock')">🖖 Spock</button>
     </div>
-    <div id="playerChoice">Player: </div>
+    <div id="playerChoose">Player: </div>
     <div id="cpuChoice">CPU: </div>
     <div id="result"></div>
     <div id="rounds">Rounds: </div>
 
 
+    <div id="scoreboard">
+        <p>player Score<span id='player-score'>0</span></p>
+        <p>CPU Score:<span id='cpu-score'>0</span></p>
+    </div>
+
+
     <footer>
         <div class="rules">
-            <ol>
+            <ul>
                 <li>
                     Scissors cut Paper
                 </li>
@@ -65,7 +71,7 @@
                 <li>
                     Rock crushes Scissors
                 </li>
-            </ol>
+            </ul>
         </div>
     </footer>
 

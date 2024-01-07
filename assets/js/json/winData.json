@@ -1,27 +1,27 @@
 {
     "rock": {
         "wins": ["lizard", "scissors"],
-        "img": "",
+        "img": "✊",
         "alt": "rock"
     },
     "paper": {
         "wins": ["rock", "spock"],
-        "img": "",
+        "img": "✋",
         "alt": "paper"
     },
     "scissors": {
         "wins": ["lizard", "paper"],
-        "img": "",
+        "img": "✌️",
         "alt": "scissors"
     },
     "lizard": {
         "wins": ["paper", "spock"],
-        "img": "",
+        "img": "🦎",
         "alt": "lizard"
     },
     "spock": {
         "wins": ["rock", "scissors"],
-        "img": "",
+        "img": "🖖",
         "alt": "spock"
     }
 }
