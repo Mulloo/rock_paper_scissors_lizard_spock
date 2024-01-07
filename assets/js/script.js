@@ -32,7 +32,7 @@ async function fetchWinData() {
     const res = await fetch('assets/js/json/windata.json');
     winData = await res.json();
     console.log(winData);
-    console.log(winData.rock['wins'].values());
+    console.log(winData['rock'].wins);
     let rockWins = winData.rock['wins'].values();
     console.log(typeof (rockWins));
 }
