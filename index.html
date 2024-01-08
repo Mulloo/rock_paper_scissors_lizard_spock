@@ -7,6 +7,9 @@
     <meta name="keywords"
         content="Rock-Paper-Scissor-Lizard-Spock,rock,Rock,paper,Paper,scissors,Scissors,lizard,Lizard,spock,Spock">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link type="image/png" sizes="16x16" rel="icon" href=".../icons8-game-16.png">
+    <link type="image/png" sizes="32x32" rel="icon" href=".../icons8-game-32.png">
+    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-game-96.png">
     <title>Rock Paper Scissor Lizard Spock</title>
 </head>
 
@@ -14,43 +17,44 @@
     <header>
         <h1>Rock-Paper-Scissor-Lizard-Spock</h1>
     </header>
-
-    <div class="btn_div">
-        <button gameType="easy">Easy</button>
-        <button gameType="medium">Medium</button>
-        <button gameType="hard">Hard</button>
-        <!-- <button gameType="submit">Start</button>  -->
-    </div>
-
-    <div class="player_choice_div">
-        <button dataType="rock">✊ Rock</button>
-        <button dataType="paper">✋ Paper</button>
-        <button dataType="scissors">✌️ Scissors</button>
-        <button dataType="lizard">🦎 Lizard</button>
-        <button dataType="spock">🖖 Spock</button>
-    </div>
-
-    <div id="player-choice">Player: </div>
-    <div id="cpu-choice">CPU: </div>
-    <div id="result"></div>
-    <div id="rounds">Rounds: </div>
-
-
-    <div id="scoreboard">
-        <p>
-            player Score
-            <span id='player-score'>
-                0
-            </span>
-        </p>
-        <p>
-            CPU Score:
-            <span id='cpu-score'>
-                0
-            </span>
-        </p>
-    </div>
-
+    <main>
+        <!-- make class to id -->
+        <div class="btns_div">
+            <button game_type="easy">Easy</button>
+            <button game_type="medium">Medium</button>
+            <button game_type="hard">Hard</button>
+            <!-- <button gameType="submit">Start</button>  -->
+        </div>
+        <div class="hide">
+            <div class="player_choice_div">
+                <button dataType="rock">✊ Rock</button>
+                <button dataType="paper">✋ Paper</button>
+                <button dataType="scissors">✌️ Scissors</button>
+                <button dataType="lizard">🦎 Lizard</button>
+                <button dataType="spock">🖖 Spock</button>
+            </div>
+            <div>
+                <div>Player: <span id="player-choice"></span> </div>
+                <div id="cpu-choice">CPU: <span id="cpu-choice"></span></div>
+                <div id="result"></div>
+                <div id="rounds">Rounds: <span id="rounds"></span></div>
+            </div>
+        </div>
+        <div id="scoreboard" class="hide">
+            <p>
+                player Score
+                <span id='player-score'>
+                    0
+                </span>
+            </p>
+            <p>
+                CPU Score:
+                <span id='cpu-score'>
+                    0
+                </span>
+            </p>
+        </div>
+    </main>
 
     <footer>
         <div class="rules">
@@ -90,7 +94,7 @@
     </footer>
 
 
-    <button class="restartBtn">Restart</button>
+    <button class="restart_btn">Restart</button>
 
 </body>
 <script src="assets/js/script.js"></script>
