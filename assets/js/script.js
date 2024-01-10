@@ -3,8 +3,14 @@ let playerScore = 0;
 let cpuScore = 0;
 let rounds = 0;
 let levelDifficulty;
-const playerChoiceContainer = document.getElementsByClassName('player_choice_div');
-//! add target elements to id's here 
+let winData;
+
+// target player choice div
+const playerChoiceContainer = document.getElementById("player_choice_div");
+// target difficulty buttons easy medium hard
+const btnDifficulty = document.getElementsByClassName('btn-difficulty');
+// target choice buttons ie. rock paper.etc
+const btnChoice = document.getElementsByClassName('btn-choice');
 
 /**
  * waits for the DOM to load then fetches json data
@@ -15,69 +21,82 @@ document.addEventListener('DOMContentLoaded', function () {
     addHideClass();
 });
 
-/* adds event listener to difficulty buttons and passes the user choice to the playGame function */
-const buttons = document.getElementsByTagName('button');
-
-/**
- * sets the buttons for difficulty eventlistener and sends the input to the 
- * playGame function
- */
-function setLevelBtn() {
-    for (let button of buttons) {
-        button.addEventListener('click', function () {
-            playGame(this.getAttribute('game_type'));
-        })
-    }
-}
-
 /**
  * fetches the data form the winData.json file and stores it in the variable winData
  */
 async function fetchWinData() {
     const res = await fetch('assets/js/json/windata.json');
     winData = await res.json();
-    console.log(winData);
-    console.log(winData['rock'].wins);
-    let rockWins = winData.rock['wins'].values();
-    console.log(typeof (rockWins));
+    let rockWins = winData.rock.wins; // ["lizard", "scissors"] 
+    let paperWins = winData.paper.wins; // ["rock", "spock"]
+    let scissorsWins = winData.scissors.wins; // ["lizard", "paper"]
+    let lizardWins = winData.lizard.wins; // ["paper", "spock"]
+    let spockWins = winData.spock.wins; // ["rock", "scissors"]
+}
+
+/**
+ * sets the buttons for difficulty eventlistener and sends the input to the 
+ * playGame function
+ */
+function setLevelBtn() {
+    for (let button of btnDifficulty) {
+        button.addEventListener('click', function () {
+            const difficulty = this.getAttribute("data-type");
+            console.log(`Button clicked. Difficulty: ${this.getAttribute("data-type")}`);
+            levelDifficulty = difficulty;
+            playGame(this.getAttribute("data-type"));
+            playerChoice(this.getAttribute("data-choice"));
+            computerChoice(this.getAttribute("data-type"));
+        });
+    }
+    for (let button of btnChoice) {
+        button.addEventListener('click', function () {
+            const playerChoice = this.getAttribute('data-choice');
+            console.log(`Choice Button clicked. Player Choose: ${playerChoice}`);
+        })
+    }
 }
 
 /**
  *  adds the hide class to an element with classnames 
  */
 function addHideClass() {
-    playerChoiceContainer.classlist.add('hide');
+    playerChoiceContainer.classList.add("hide");
 }
 
 function showHiddenClass() {
-    playerChoiceContainer.classlist.remove('hide');
+    playerChoiceContainer.classList.remove("hide");
 }
 
 /**
  * !
  */
 function playerChoice() {
-
+    const playerChoice = document.getElementsByClassName("player_choice_div");
 }
 
 /**
  * grabs the level difficulty from playGame and uses the string passes to 
  * decide what level of random to use.
  */
-function computerChoice() {
+function computerChoice(levelDifficulty) {
+    let numRandom;
+    const numRandomRange = 5;
+
     if (levelDifficulty === 'easy') {
-        let numRandom = Math.floor(Math.random() * 3 + 1);
+        numRandom = Math.floor(Math.random() * (numRandomRange / 2));
     } else if (levelDifficulty === 'medium') {
-        let numRandom = Math.floor(Math.random() * 3 + 1);
+        numRandom = Math.floor(Math.random() * (numRandomRange));
     } else if (levelDifficulty === 'hard') {
-        let numRandom = Math.floor(Math.random() * 3 + 1);
+        numRandom = Math.floor(Math.random() * numRandomRange * 2);
     } else {
-        alert(`Unknown difficulty ${levelDifficulty}`)
-        throw `Unknown difficulty ${levelDifficulty}. Aborting!`;
+        alert(`Unknown difficulty ${levelDifficulty}`);
     }
-    determineWinner(numRandom);
-    console.log(numRandom);
-    console.log(levelDifficulty);
+    const choices = Object.keys(winData);
+    const computerChoice = choices[numRandom];
+    console.log(`Computer choose: ${computerChoice}`);
+    determineWinner(computerChoice);
+    showHiddenClass();
 }
 
 
@@ -85,12 +104,13 @@ function computerChoice() {
  * 
  */
 function playGame(levelDifficulty) {
-    computerChoice(levelDifficulty);
-    showHiddenClass();
+
+
 }
 /**
  * !
  */
-function determineWinner() {
+function determineWinner(playerChoice, computerChoice) {
+
 
 }
