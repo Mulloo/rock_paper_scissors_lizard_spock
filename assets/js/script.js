@@ -25,13 +25,20 @@ document.addEventListener('DOMContentLoaded', function () {
  * fetches the data form the winData.json file and stores it in the variable winData
  */
 async function fetchWinData() {
-    const res = await fetch('assets/js/json/windata.json');
-    winData = await res.json();
-    let rockWins = winData.rock.wins; // ["lizard", "scissors"] 
-    let paperWins = winData.paper.wins; // ["rock", "spock"]
-    let scissorsWins = winData.scissors.wins; // ["lizard", "paper"]
-    let lizardWins = winData.lizard.wins; // ["paper", "spock"]
-    let spockWins = winData.spock.wins; // ["rock", "scissors"]
+    try {
+
+
+        const res = await fetch('assets/js/json/windata.json');
+        winData = await res.json();
+        let rockWins = winData.rock.wins; // ["lizard", "scissors"] 
+        let paperWins = winData.paper.wins; // ["rock", "spock"]
+        let scissorsWins = winData.scissors.wins; // ["lizard", "paper"]
+        let lizardWins = winData.lizard.wins; // ["paper", "spock"]
+        let spockWins = winData.spock.wins; // ["rock", "scissors"]
+    } catch (error) {
+        console.error('Error fetching winData', error)
+        throw error;
+    }
 }
 
 /**
@@ -46,14 +53,17 @@ function setLevelBtn() {
             levelDifficulty = difficulty;
             playGame(this.getAttribute("data-type"));
             playerChoice(this.getAttribute("data-choice"));
-            computerChoice(this.getAttribute("data-type"));
+            computerChoiceDifficulty(this.getAttribute("data-type"));
         });
     }
     for (let button of btnChoice) {
         button.addEventListener('click', function () {
-            const playerChoice = this.getAttribute('data-choice');
-            console.log(`Choice Button clicked. Player Choose: ${playerChoice}`);
+            const playerChoiceMade = this.getAttribute('data-choice');
+            console.log(`Choice Button clicked. Player Choose: ${playerChoiceMade}`);
+            determineWinner(playerChoiceMade);
+            return playerChoiceMade;
         })
+
     }
 }
 
@@ -72,45 +82,60 @@ function showHiddenClass() {
  * !
  */
 function playerChoice() {
-    const playerChoice = document.getElementsByClassName("player_choice_div");
+    const playerChoiceMade = document.getElementsByClassName("player_choice_div");
 }
 
 /**
  * grabs the level difficulty from playGame and uses the string passes to 
  * decide what level of random to use.
  */
-function computerChoice(levelDifficulty) {
+function computerChoiceDifficulty(levelDifficulty) {
     let numRandom;
-    const numRandomRange = 5;
-
+    const numRandomRange = 3;
     if (levelDifficulty === 'easy') {
         numRandom = Math.floor(Math.random() * (numRandomRange / 2));
     } else if (levelDifficulty === 'medium') {
         numRandom = Math.floor(Math.random() * (numRandomRange));
     } else if (levelDifficulty === 'hard') {
-        numRandom = Math.floor(Math.random() * numRandomRange * 2);
+        numRandom = Math.floor(Math.random() * numRandomRange + 1);
     } else {
         alert(`Unknown difficulty ${levelDifficulty}`);
     }
-    const choices = Object.keys(winData);
-    const computerChoice = choices[numRandom];
-    console.log(`Computer choose: ${computerChoice}`);
-    determineWinner(computerChoice);
-    showHiddenClass();
+    return numRandom;
 }
 
+function computerChoice(numRandom, playerChoiceMade) {
+    // const choices = Object.keys(winData);
+    const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    const computerChoiceMade = choices[numRandom];
+    console.log(`Computer choose: ${computerChoiceMade}`);
+    determineWinner(playerChoiceMade, computerChoiceMade);
+}
 
 /**
  * 
  */
-function playGame(levelDifficulty) {
-
+function playGame() {
 
 }
 /**
  * !
  */
-function determineWinner(playerChoice, computerChoice) {
+function determineWinner(playerChoiceMade, computerChoiceMade) {
+    if (playerChoiceMade === computerChoiceMade) {
+        let result = 'it\'s a tie'
+        return result;
 
-
+    } else {
+        const wins = winData[playerChoiceMade].wins;
+        if (wins.includes(computerChoiceMade)) {
+            result = `Player wins! ${playerChoiceMade} beats ${computerChoiceMade}`;
+            console.log(result);
+            return result;
+        } else {
+            result = `Computer wins! ${computerChoiceMade} beats ${playerChoiceMade}`;
+            console.log(result);
+            return result;
+        }
+    }
 }
