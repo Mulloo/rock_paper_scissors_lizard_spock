@@ -7,3 +7,5 @@
 - **Score Tracking:** Keep track of the player's and computer's score.
 - **Game Rules:** Shows the rules for anyone unfamiliar with the game.
 
+## User Stories
+- ** 
