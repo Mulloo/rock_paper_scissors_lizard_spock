@@ -5,6 +5,8 @@ This game was popularized by the TV show The Big Bang Theory. This is a website 
 
 You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.github.io/rock_paper_scissors_lizard_spock/)
 
+![Am I responsive image](doc/amiresponsive.png)
+
 ## Features
 
 ### Added
@@ -91,6 +93,18 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 |   Player Score  |         Updates after each round        |             Increases each time the player wins             |   Yes  |  Yes   |                                  -                                  |
 |    CPU Score    |         Updates after each round        |            Increases each time the computer wins            |   Yes  |   Yes  |                                  -                                  |
 |      Socials     | click the social logo you want to visit |    Bring the user to the social homepage of there choice    |  Yes   |   Yes  |                                -                                     |
+
+## Bugs
+
+### Fixed
+
+- Due to a scope issue, the variable ComputerChoice was stuck as undefined this was fixed by moving multiple lines of code outside of the computerChoice function and creating a new function called mainGameLogic.
+- After restarting the game the rounds and scores would jump to the previous score and rounds due to the function update variables didn't have the variables playerScore cpuScore and rounds set at all. This was fixed by setting the variables to the correct values inside this function
+-
+
+### Not Fixed
+
+- No know unfixed bugs
 
 ## Technologies Used
 
