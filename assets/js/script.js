@@ -1,13 +1,11 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 let playerScore = 0;
 let cpuScore = 0;
 let rounds = 0;
 let winData;
-let levelDifficulty;
 let numRandom;
 
 
-const playerChoiceContainer = document.getElementById("player_choice_div");
 const btnChoice = document.getElementsByClassName('btn-choice');
 const playerScoreContainer = document.getElementById('player-score');
 const cpuScoreContainer = document.getElementById('cpu-score');
@@ -43,7 +41,6 @@ function updateVariables() {
     playerScore = 0;
     cpuScore = 0;
     rounds = 0;
-
 }
 
 /**
@@ -65,7 +62,7 @@ async function fetchWinData() {
         const res = await fetch('assets/js/json/windata.json');
         winData = await res.json();
     } catch (error) {
-        console.error('Error fetching winData', error)
+        console.error('Error fetching winData', error);
         throw error;
     }
 }
@@ -85,7 +82,6 @@ function computerChoice(numRandom) {
  *  Shows the scoreboard and game container after start is clicked
  */
 function showScoreBoardGameContainers() {
-    // playerChoiceContainer.classList.add("hide");
     scoreBoardContainer.classList.remove('hide');
     gameContainer.classList.remove('hide');
 
@@ -97,7 +93,7 @@ function determineWinner(playerChoiceMade, computerChoiceMade) {
     playerDisplay.innerText = playerChoiceMade;
     computerDisplay.innerText = computerChoiceMade;
     if (playerChoiceMade === computerChoiceMade) {
-        result = 'it\'s a tie'
+        result = 'it\'s a tie';
         console.log(result);
         outCome.style.color = 'orange';
     } else {
