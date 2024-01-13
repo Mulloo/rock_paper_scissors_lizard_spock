@@ -1,7 +1,9 @@
 # Rock Paper Scissors Lizard Spock
 
 Rock Paper Scissors Lizard Spock is a game just like Rock Paper Scissors but with added choices.
-This game was popularized by the TV show The Big Bang Theory.
+This game was popularized by the TV show The Big Bang Theory. This is a website where you can learn to play the game against a computer.
+
+You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.github.io/rock_paper_scissors_lizard_spock/)
 
 ## Features
 
