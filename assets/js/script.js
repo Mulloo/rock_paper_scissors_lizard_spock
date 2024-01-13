@@ -5,7 +5,6 @@ let rounds = 0;
 let winData;
 let numRandom;
 
-
 const btnChoice = document.getElementsByClassName('btn-choice');
 const playerScoreContainer = document.getElementById('player-score');
 const cpuScoreContainer = document.getElementById('cpu-score');
@@ -16,6 +15,7 @@ const gameContainer = document.getElementById('game-container');
 const playerDisplay = document.getElementById('player-choice');
 const computerDisplay = document.getElementById('cpu-choice');
 const outCome = document.getElementById('out-come');
+
 /**
  * waits for the DOM to load then fetches json data
  */
@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
+/**
+ * Resets the score's and text to 0 for score and 1 for round.
+ */
 function updateVariables() {
     startBtn.innerText = 'Restart';
     roundsContainer.innerText = '1';
@@ -40,11 +42,11 @@ function updateVariables() {
     outCome.innerText = '';
     playerScore = 0;
     cpuScore = 0;
-    rounds = 0;
+    rounds = 1;
 }
 
 /**
- * 
+ * when the user makes choice this makes the numRadom and sends both to determine winner
  */
 function mainGameLogic(event) {
     const playerChoiceMade = event.target.getAttribute('data-choice');
@@ -52,7 +54,6 @@ function mainGameLogic(event) {
     numRandom = Math.floor(Math.random() * 5);
     let computerChoiceMade = computerChoice(numRandom);
     determineWinner(playerChoiceMade, computerChoiceMade);
-
 }
 /**
  * fetches the data form the winData.json file and stores it in the variable winData
@@ -67,16 +68,16 @@ async function fetchWinData() {
     }
 }
 
+/**
+ * grabs the choice for the computer from the numRadom 
+ */
 function computerChoice(numRandom) {
     const choices = Object.keys(winData);
-    // const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     const computerChoiceMade = choices[numRandom];
     console.log(`Computer choose: ${computerChoiceMade}`);
     console.log(numRandom);
     return computerChoiceMade;
 }
-
-
 
 /**
  *  Shows the scoreboard and game container after start is clicked
@@ -84,9 +85,12 @@ function computerChoice(numRandom) {
 function showScoreBoardGameContainers() {
     scoreBoardContainer.classList.remove('hide');
     gameContainer.classList.remove('hide');
-
 }
 
+/**
+ * takes the player choice and computer choice decides which wins and outputs the results 
+ * updates both text outcome and score.
+ */
 function determineWinner(playerChoiceMade, computerChoiceMade) {
     let result;
     rounds++;

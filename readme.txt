@@ -8,4 +8,10 @@
 - **Game Rules:** Shows the rules for anyone unfamiliar with the game.
 
 ## User Stories
+- **  
+- ** 
+- ** 
+- ** 
+- ** 
+- ** 
 - ** 
