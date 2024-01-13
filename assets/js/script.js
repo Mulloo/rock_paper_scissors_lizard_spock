@@ -15,7 +15,9 @@ const roundsContainer = document.getElementById('rounds');
 const startBtn = document.getElementById('start');
 const scoreBoardContainer = document.getElementById('scoreboard');
 const gameContainer = document.getElementById('game-container');
-
+const playerDisplay = document.getElementById('player-choice');
+const computerDisplay = document.getElementById('cpu-choice');
+const outCome = document.getElementById('out-come');
 /**
  * waits for the DOM to load then fetches json data
  */
@@ -37,10 +39,15 @@ function updateVariables() {
     roundsContainer.innerText = '1';
     playerScoreContainer.innerText = '0';
     cpuScoreContainer.innerText = '0';
+    outCome.innerText = '';
+    playerScore = 0;
+    cpuScore = 0;
+    rounds = 0;
+
 }
 
 /**
- * !
+ * 
  */
 function mainGameLogic(event) {
     const playerChoiceMade = event.target.getAttribute('data-choice');
@@ -75,7 +82,7 @@ function computerChoice(numRandom) {
 
 
 /**
- *  adds the hide class to an element with classnames 
+ *  Shows the scoreboard and game container after start is clicked
  */
 function showScoreBoardGameContainers() {
     // playerChoiceContainer.classList.add("hide");
@@ -84,29 +91,31 @@ function showScoreBoardGameContainers() {
 
 }
 
-// function showHiddenClass() {
-//     playerChoiceContainer.classList.remove("hide");
-// }
-
 function determineWinner(playerChoiceMade, computerChoiceMade) {
     let result;
-    rounds++
+    rounds++;
+    playerDisplay.innerText = playerChoiceMade;
+    computerDisplay.innerText = computerChoiceMade;
     if (playerChoiceMade === computerChoiceMade) {
         result = 'it\'s a tie'
         console.log(result);
+        outCome.style.color = 'orange';
     } else {
         const wins = winData[playerChoiceMade].wins;
         if (wins.includes(computerChoiceMade)) {
             result = `Player wins! ${playerChoiceMade} beats ${computerChoiceMade}`;
             console.log(result);
-            playerScore++
-            playerScoreContainer.innerHTML = playerScore
+            playerScore++;
+            outCome.style.color = '#2ecc71';
         } else {
             result = `Computer wins! ${computerChoiceMade} beats ${playerChoiceMade}`;
             console.log(result);
-            cpuScore++
-            cpuScoreContainer.innerHTML = cpuScore
+            cpuScore++;
+            outCome.style.color = 'red';
         }
     }
-    roundsContainer.innerHTML = rounds
+    playerScoreContainer.innerHTML = playerScore;
+    cpuScoreContainer.innerHTML = cpuScore;
+    outCome.innerHTML = result;
+    roundsContainer.innerHTML = rounds;
 }
