@@ -5,9 +5,6 @@ let rounds = 0;
 let winData;
 let levelDifficulty;
 
-let computerChoiceMade = 'rock';
-
-
 // target player choice div
 const playerChoiceContainer = document.getElementById("player_choice_div");
 // target difficulty buttons easy medium hard
@@ -103,17 +100,21 @@ function showHiddenClass() {
 }
 
 function determineWinner(playerChoiceMade, computerChoiceMade) {
-    if (playerChoiceMade === computerChoiceMade) {
-        let result = 'it\'s a tie'
-    } else {
-        const wins = winData[playerChoiceMade].wins;
-        if (wins.includes(computerChoiceMade)) {
-            result = `Player wins! ${playerChoiceMade} beats ${computerChoiceMade}`;
-            console.log(result);
+    while (computerChoiceMade = undefined) {
+        if (playerChoiceMade === computerChoiceMade) {
+            let result = 'it\'s a tie'
         } else {
-            result = `Computer wins! ${computerChoiceMade} beats ${playerChoiceMade}`;
-            console.log(result);
+            const wins = winData[playerChoiceMade].wins;
+            if (wins.includes(computerChoiceMade)) {
+                result = `Player wins! ${playerChoiceMade} beats ${computerChoiceMade}`;
+                console.log(result);
+            } else {
+                result = `Computer wins! ${computerChoiceMade} beats ${playerChoiceMade}`;
+                console.log(result);
+            }
         }
         return (result);
+        determineWinner(playerChoiceMade, computerChoiceMade);
+        break;
     }
 }
