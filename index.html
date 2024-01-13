@@ -19,7 +19,7 @@
     </header>
     <main>
         <!-- make class to id -->
-        <div class="hide">
+        <div id="game-container" class="hide">
             <div id="player_choice_div">
                 <button class="btn-choice" data-choice="rock">✊ Rock</button>
                 <button class="btn-choice" data-choice="paper">✋ Paper</button>
@@ -31,12 +31,12 @@
                 <div>Player: <span id="player-choice"></span> </div>
                 <div id="cpu-choice">CPU: <span id="cpu-choice"></span></div>
                 <div id="result"></div>
-                <div id="rounds">Rounds: <span id="rounds"></span></div>
+                <div id="rounds-container">Rounds: <span id="rounds">1</span></div>
             </div>
         </div>
         <div id="scoreboard" class="hide">
             <p>
-                player Score
+                Player Score:
                 <span id='player-score'>
                     0
                 </span>
@@ -88,7 +88,7 @@
     </footer>
 
 
-    <button class="restart_btn">Restart</button>
+    <button id="start" class="restart_btn">Start</button>
 
 </body>
 <script src="assets/js/script.js"></script>

@@ -6,24 +6,38 @@ let winData;
 let levelDifficulty;
 let numRandom;
 
-// target player choice div
-const playerChoiceContainer = document.getElementById("player_choice_div");
 
-// target choice buttons ie. rock paper.etc
+const playerChoiceContainer = document.getElementById("player_choice_div");
 const btnChoice = document.getElementsByClassName('btn-choice');
+const playerScoreContainer = document.getElementById('player-score');
+const cpuScoreContainer = document.getElementById('cpu-score');
+const roundsContainer = document.getElementById('rounds');
+const startBtn = document.getElementById('start');
+const scoreBoardContainer = document.getElementById('scoreboard');
+const gameContainer = document.getElementById('game-container');
 
 /**
  * waits for the DOM to load then fetches json data
  */
 document.addEventListener('DOMContentLoaded', function () {
     fetchWinData();
+    startBtn.addEventListener('click', function () {
+        showScoreBoardGameContainers();
+        updateVariables();
+    });
     for (let button of btnChoice) {
         button.addEventListener('click', function (event) {
             mainGameLogic(event);
-        })
+        });
     }
-    addHideClass();
 });
+
+function updateVariables() {
+    startBtn.innerText = 'Restart';
+    roundsContainer.innerText = '1';
+    playerScoreContainer.innerText = '0';
+    cpuScoreContainer.innerText = '0';
+}
 
 /**
  * !
@@ -63,26 +77,36 @@ function computerChoice(numRandom) {
 /**
  *  adds the hide class to an element with classnames 
  */
-function addHideClass() {
-    playerChoiceContainer.classList.add("hide");
+function showScoreBoardGameContainers() {
+    // playerChoiceContainer.classList.add("hide");
+    scoreBoardContainer.classList.remove('hide');
+    gameContainer.classList.remove('hide');
+
 }
 
-function showHiddenClass() {
-    playerChoiceContainer.classList.remove("hide");
-}
+// function showHiddenClass() {
+//     playerChoiceContainer.classList.remove("hide");
+// }
 
 function determineWinner(playerChoiceMade, computerChoiceMade) {
     let result;
+    rounds++
     if (playerChoiceMade === computerChoiceMade) {
         result = 'it\'s a tie'
+        console.log(result);
     } else {
         const wins = winData[playerChoiceMade].wins;
         if (wins.includes(computerChoiceMade)) {
             result = `Player wins! ${playerChoiceMade} beats ${computerChoiceMade}`;
             console.log(result);
+            playerScore++
+            playerScoreContainer.innerHTML = playerScore
         } else {
             result = `Computer wins! ${computerChoiceMade} beats ${playerChoiceMade}`;
             console.log(result);
+            cpuScore++
+            cpuScoreContainer.innerHTML = cpuScore
         }
     }
+    roundsContainer.innerHTML = rounds
 }
