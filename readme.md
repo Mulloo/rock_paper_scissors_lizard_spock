@@ -23,23 +23,36 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 - **Difficulty levels:** Choose from three different levels of challenge -Easy, Medium and Hard.
 
-## User Stories
+## User Stories & Feature Descriptions
 
 - As a user, I need to be able to start the game.
 
 ![Image of the start button.](doc/startbtn.png)
 
+- Description.
+  - The start button is bright orange on a white background to make it easy to see it is also clearly placed in the center of the screen
+
 - As a user, I need a way to make my choice.
 
 ![Image of the choice buttons rock paper scissors lizard spock.](doc/choicebtns.png)
+
+- Description.
+  - The choice buttons are in a nice light blue with a pointer attribute to signify they are choices to be clicked. They have a transition effect showing which button the user hovers over. The use of emojis makes it clear and easy to know at a glance which buttons are which.
 
 - As a user, I need to know the rules.
 
 ![Image of the rules for the game.](doc/rules.png)
 
+- Description.
+
+  - A list of the rules placed in a darker color to give contrast makes it easy to know the rules of the game.
+
 - As a user, I need to know the scores.
 
 ![Image of the scores](doc/score.png)
+
+- Description.
+  - Text to show the current score of the game one for player score and one for the computer.
 
 - As a user, I need to know the outcome of who won.
 
@@ -49,17 +62,30 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 ![Its a tie](doc/tie.png)
 
+- Description.
+  - Each game outcome has its own color yellow for a tie green for a win and red for a loss. This makes it clear the outcome once the user gets familiar with each outcome and its color.
+
 - As a user, I need to know how many rounds have been played.
 
 ![An image of the rounds](doc/rounds.png)
+
+- Description.
+  - Text to show how many rounds have been played if the user wants to go with the standard best two out of three rounds.
 
 - As a user, I need to know what the computer chooses and what I choose
 
 ![player and computer choice](doc/playercpuchoice.png)
 
+- Description.
+
+  - Large-size text to show the user what they choose and the computer's choice so they know what to expect in the outcome slowly they will learn the game and understand the outcome of the game without the need to see it.
+
 - As a user, I need to be able to restart the game if I want
 
 ![Restart button image](doc/restart.png)
+
+- Description.
+  - Once the player starts the game the start button text changes to restart as when they are starting they will possibly have a lackluster score thus the restart button will reset the rounds and both scores to zero.
 
 ## Game Rules
 
@@ -123,7 +149,7 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 ## Technologies Used
 
 - [HTML](https://www.w3schools.com/html/) is used as the foundation of the site.
-- [CSS](https://www.w3schools.com/Css/) is used to add style and layout of the site.
+- [CSS](https://www.w3schools.com/Css/) is used to add style and layout to the site.
 - [JavaScript](https://www.w3schools.com/js/) is used for the main functionality of the site.
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) is used to arrange items on the page.
 - [VSCode](https://code.visualstudio.com/) is used as the IDE for writing and editing code.
