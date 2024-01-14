@@ -15,6 +15,7 @@ const gameContainer = document.getElementById('game-container');
 const playerDisplay = document.getElementById('player-choice');
 const computerDisplay = document.getElementById('cpu-choice');
 const outCome = document.getElementById('out-come');
+const outComeWinner = document.getElementById('out-come-winner')
 
 /**
  * waits for the DOM to load then fetches json data
@@ -87,6 +88,8 @@ function computerChoice(numRandom) {
 function showScoreBoardGameContainers() {
     scoreBoardContainer.classList.remove('hide');
     gameContainer.classList.remove('hide');
+    outComeWinner.classList.add('hide');
+
 }
 
 /**
@@ -116,8 +119,10 @@ function determineWinner(playerChoiceMade, computerChoiceMade) {
             outCome.style.color = 'red';
         }
     }
+    outComeWinner.classList.remove('hide');
     playerScoreContainer.innerHTML = playerScore;
     cpuScoreContainer.innerHTML = cpuScore;
     outCome.innerHTML = result;
     roundsContainer.innerHTML = rounds;
+
 }

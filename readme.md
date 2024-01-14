@@ -163,6 +163,20 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 - This pallet has bright colors to show important areas, as well as white and black to create contrast for the user to see the necessary information on the site like the outcome and score.
 
+## Deployment
+
+To publish the website, I utilized GitHub Pages as the hosting platform. Here's a breakdown of the deployment process:
+
+- Navigate to the GitHub repository and access the "Settings" tab.
+
+- In the "Settings" tab, scroll down to the "Source" section. Locate the drop-down menu and opt for the "Master Branch" from the available options.
+
+- Following the selection of the master branch, GitHub Pages will refresh the page automatically. Keep an eye out for a ribbon display, providing a detailed confirmation of a successful deployment.
+
+For live site access, follow this [link](https://mulloo.github.io/rock_paper_scissors_lizard_spock/)
+
+This deployment method ensures that the most recent version of your project on the master branch is accessible via the live link. It offers a straightforward means to share and present your project online using GitHub Pages.
+
 ## Citation
 
 - The footer is taken from the Titanfall 2 wiki repo [Titanfall](https://github.com/Mulloo/Titanfall-2-Weapon-Wiki) icons are form font awesome.
