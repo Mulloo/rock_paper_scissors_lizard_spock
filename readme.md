@@ -144,7 +144,7 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 ### Not Fixed
 
-- No known unfixed bugs
+- Player choice and computer choice do not reset when the player clicks the restart button not fixed due to time constraints.
 
 ## Technologies Used
 
