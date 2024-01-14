@@ -61,6 +61,20 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 ![Restart button image](doc/restart.png)
 
+## Game Rules
+
+|          | Rock | Paper | Scissors | Lizard | Spock |
+|----------|------|-------|----------|--------|-------|
+| Rock     | -    | W     | L        | W      | L     |
+| Paper    | L    | -     | W        | W      | L     |
+| Scissors | W    | L     | -        | L      | W     |
+| Lizard   | L    | L     | W        | -      | W     |
+| Spock    | W    | W     | L        | L      | -     |
+
+- W: Win
+- L: Loss
+- -: Draw
+
 ## Validation
 
 - [HTML Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmulloo.github.io%2Frock_paper_scissors_lizard_spock%2F) No errors showing for the HTML.
@@ -115,9 +129,14 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 - [VSCode](https://code.visualstudio.com/) is used as the IDE for writing and editing code.
 - [Git](https://git-scm.com/) is used as a version control.
 - [GitHub](https://github.com/) is used to store the repository and deploy the sites.
+- [Json](https://www.w3schools.com/whatis/whatis_json.asp) is used to store the win data.
+
+## Design
+
+![Image showing the colors used on the site.](doc/palette.png)
+
+- This pallet has bright colors to show important areas, as well as white and black to create contrast for the user to see the necessary information on the site like the outcome and score.
 
 ## Citation
 
 - The footer is taken from the Titanfall 2 wiki repo [Titanfall](https://github.com/Mulloo/Titanfall-2-Weapon-Wiki) icons are form font awesome.
-
--
