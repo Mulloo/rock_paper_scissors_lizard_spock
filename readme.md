@@ -144,7 +144,7 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 ### Not Fixed
 
-- No know unfixed bugs
+- No known unfixed bugs
 
 ## Technologies Used
 
