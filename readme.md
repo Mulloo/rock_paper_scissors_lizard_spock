@@ -14,7 +14,7 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 - **Player Choices:** Choose between Rock, Paper, Scissors, Lizard and Spock.
 - **Computer Opponent:** The computer opponent randomly selects its move based on the chosen difficulty level.
 - **Score Tracking:** Keep track of the player's and computer's score.
-- **Round Tracking:** Keep track of the amount of rounds you have played.
+- **Round Tracking:** Keep track of the number of rounds you have played.
 - **Computer Choice:** Tells you know what the computer has picked.
 - **PlayerChoice:** Tells you know what you picked.
 - **Game Rules:** Shows the rules for anyone unfamiliar with the game.
@@ -81,7 +81,7 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 
 - [CSS Validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmulloo.github.io%2Frock_paper_scissors_lizard_spock%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) No errors showing for the CSS.
 
-- JavaScript Validation.
+- JavaScript Validation Jshint. Showing one warning.
 
 ![js validation](doc/jsvalidation.png)
 
@@ -129,7 +129,7 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 - [VSCode](https://code.visualstudio.com/) is used as the IDE for writing and editing code.
 - [Git](https://git-scm.com/) is used as a version control.
 - [GitHub](https://github.com/) is used to store the repository and deploy the sites.
-- [Json](https://www.w3schools.com/whatis/whatis_json.asp) is used to store the win data.
+- [JSON](https://www.w3schools.com/whatis/whatis_json.asp) is used to store the win data.
 
 ## Design
 
@@ -140,3 +140,4 @@ You can find the site here [Rock Paper Scissors Lizard Spock](https://mulloo.git
 ## Citation
 
 - The footer is taken from the Titanfall 2 wiki repo [Titanfall](https://github.com/Mulloo/Titanfall-2-Weapon-Wiki) icons are form font awesome.
+- [Icons8](https://icons8.com/icons/set/game) Favicon form Icons8.

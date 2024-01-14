@@ -18,6 +18,7 @@ const outCome = document.getElementById('out-come');
 
 /**
  * waits for the DOM to load then fetches json data
+ * sets button event listener and passes event to mainGameLogic
  */
 document.addEventListener('DOMContentLoaded', function () {
     fetchWinData();
@@ -47,6 +48,7 @@ function updateVariables() {
 
 /**
  * when the user makes choice this makes the numRadom and sends both to determine winner
+ * 
  */
 function mainGameLogic(event) {
     const playerChoiceMade = event.target.getAttribute('data-choice');
