@@ -124,5 +124,4 @@ function determineWinner(playerChoiceMade, computerChoiceMade) {
     cpuScoreContainer.innerHTML = cpuScore;
     outCome.innerHTML = result;
     roundsContainer.innerHTML = rounds;
-
 }
